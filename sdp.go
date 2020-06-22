@@ -46,7 +46,7 @@ func SDPFilter(msgIn *sdp.Message, byteIn []byte) (*sdp.Message, []byte) {
 	for i, m := range msgIn.Medias {
 		var attributes []sdp.Attribute
 		for _, attr := range m.Attributes {
-			if attr.Key == "rtpmap" || attr.Key == "fmtp" {
+			if attr.Key == "rtpmap" /*|| attr.Key == "fmtp"*/ {
 				attributes = append(attributes, attr)
 			}
 		}
